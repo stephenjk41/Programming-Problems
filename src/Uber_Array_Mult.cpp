@@ -13,8 +13,6 @@ If our input was [3, 2, 1], the expected output would be [2, 3, 6].
 #include <vector>
 #include <algorithm>
 
-using namespace std;
-
 int main()
 {
     std::vector<int> a = {1, 2, 3, 4, 5};
@@ -28,7 +26,6 @@ int main()
             if (j != i)
             {
                 mult = mult * a[j];
-                // std::cout << mult << std::endl;
             }
         }
         sum.emplace_back(mult);
