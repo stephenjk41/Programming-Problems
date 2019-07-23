@@ -13,23 +13,35 @@ If our input was [3, 2, 1], the expected output would be [2, 3, 6].
 #include <vector>
 #include <algorithm>
 
-int main()
+std::vector<int> mult(std::vector<int> a)
 {
-    std::vector<int> a = {1, 2, 3, 4, 5};
-
     std::vector<int> sum;
+    //loop through initial vector
     for (int i = 0; i < a.size(); i++)
     {
         int mult = 1;
+        //for each iteration loop through again
         for (int j = 0; j < a.size(); j++)
         {
+            //condition to not multiply itself
             if (j != i)
             {
-                mult = mult * a[j];
+                //multiply
+                mult *= a[j];
             }
         }
+        //place into new vector
         sum.emplace_back(mult);
     }
+    return sum;
+}
+
+int main()
+{
+    std::vector<int> a = {1, 2, 3, 4, 5};
+    std::vector<int> sum = mult(a);
+
+    //output
     for (int i = 0; i < sum.size(); i++)
     {
         std::cout << sum.at(i) << std::endl;
