@@ -9,9 +9,7 @@ If our input was [3, 2, 1], the expected output would be [2, 3, 6].
 *******************************************************************************/
 
 #include <iostream>
-#include <array>
 #include <vector>
-#include <algorithm>
 
 std::vector<int> mult(std::vector<int> a)
 {
