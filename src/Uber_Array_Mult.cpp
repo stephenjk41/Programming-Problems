@@ -17,21 +17,24 @@ using namespace std;
 
 int main()
 {
-    std::vector<int> a = {1,2,3,4,5};
-    
+    std::vector<int> a = {1, 2, 3, 4, 5};
+
     std::vector<int> sum;
-    for(int i = 0; i < a.size(); i++) {
+    for (int i = 0; i < a.size(); i++)
+    {
         int mult = 1;
-        for(int j = 0; j < a.size(); j++)
+        for (int j = 0; j < a.size(); j++)
         {
-            if(j != i) {
+            if (j != i)
+            {
                 mult = mult * a[j];
                 // std::cout << mult << std::endl;
-            }  
+            }
         }
         sum.emplace_back(mult);
     }
-    for(int i = 0; i < sizeof(a); i++) {
+    for (int i = 0; i < sum.size(); i++)
+    {
         std::cout << sum.at(i) << std::endl;
     }
     return 0;

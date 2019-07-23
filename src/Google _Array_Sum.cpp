@@ -17,32 +17,34 @@ int main()
     //input array
     int a[] = {10, 15, 3, 7};
     //sort array
-    int n = sizeof(a)/sizeof(a[0]); 
-    sort(a, a+n);
+    int n = sizeof(a) / sizeof(a[0]);
+    sort(a, a + n);
     //set target
     int target = 17;
-    //make bool to indicate if a match is found 
+    //make bool to indicate if a match is found
     bool match = false;
     //create a vector to store compliments
     std::vector<int> compliments;
     //loop through array
-    for (int i = 0; i < sizeof(a); i++) {
+    for (int i = 0; i < sizeof(a); i++)
+    {
         //insert compliment into array
-        compliments.emplace_back(target-a[i]);
+        compliments.emplace_back(target - a[i]);
         //search if the current index value of a[] is in the compliment vector
-        auto x = std::find(compliments.begin(),compliments.end(), a[i]);
-        //edge case to test if the iteration value is its own compliment 
-        if(x == compliments.end() && *x == *(x - 1)) {
+        auto x = std::find(compliments.begin(), compliments.end(), a[i]);
+        //edge case to test if the iteration value is its own compliment
+        if (x == compliments.end() && *x == *(x - 1))
+        {
             match == true;
         }
         //found a match
-        else if (*x == a[i] ) {
-            match = true;      
+        else if (*x == a[i])
+        {
+            match = true;
         }
-        
     }
     //output
-    if(match == true)
+    if (match == true)
     {
         std::cout << "Found a match " << std::endl;
     }
